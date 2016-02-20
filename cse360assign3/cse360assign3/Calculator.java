@@ -1,5 +1,7 @@
 /**
- * Class to perform basic calculator functions.
+ * Class to perform basic calculator functions add, subtract, 
+ * multiply, and divide. It can also return the running total of the
+ * operations performed and the history of the input.
  * 
  * @author Lazaro Ortiz pin # 621
  */
@@ -8,12 +10,14 @@ package cse360assign3;
 public class Calculator {
 
 	private int total;
+	private String historyString;
 	
 	/**
 	 * Initializes the calculator's total to zero
 	 */
 	public Calculator () {
 		total = 0;  // not needed - included for clarity
+		historyString = "0";
 	}
 	
 	/**
@@ -30,6 +34,7 @@ public class Calculator {
 	 */
 	public void add (int value) {
 		total += value;
+		historyString += " " + '+' + " " + value;
 	}
 	
 	/**
@@ -38,6 +43,7 @@ public class Calculator {
 	 */
 	public void subtract (int value) {
 		total -= value;
+		historyString += " " + '-' + " " + value;
 	}
 	
 	/**
@@ -46,6 +52,7 @@ public class Calculator {
 	 */
 	public void multiply (int value) {
 		total *= value;
+		historyString += " " + '*' + " " + value;
 	}
 	
 	/**
@@ -57,13 +64,14 @@ public class Calculator {
 			total = 0;
 		else
 			total /= value;
+		historyString += " " + '/' + " " + value;
 	}
 	
 	/**
-	 * getHistory - provides the history of all the inputs it received to include operators and operands
+	 * getHistory - provides the history of all the inputs the calculator received to include operators and operands
 	 * @return string of the history created from the inputs the calculator received
 	 */
-	public String getHistory () {
-		return "";
+	public String getHistory() {
+		return historyString;
 	}
 }

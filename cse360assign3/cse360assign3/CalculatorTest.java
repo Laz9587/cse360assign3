@@ -18,6 +18,9 @@ public class CalculatorTest {
 		assertEquals(0, calc1.getTotal());
 		
 		calc1.add(5);
+		calc1.subtract(-15);
+		calc1.multiply(2);
+		calc1.divide(8);
 		assertEquals(5, calc1.getTotal());
 	}
 	
@@ -27,7 +30,7 @@ public class CalculatorTest {
 		calc1.add(11);
 		calc1.add(-5);
 		calc1.add(3);
-		assertEquals(8, calc1.getTotal());
+		assertEquals(9, calc1.getTotal());
 	}
 	
 	@Test
@@ -36,7 +39,7 @@ public class CalculatorTest {
 		calc1.subtract(11);
 		calc1.subtract(-5);
 		calc1.subtract(3);
-		assertEquals(-8, calc1.getTotal());
+		assertEquals(-9, calc1.getTotal());
 	}
 	
 	@Test
@@ -67,6 +70,6 @@ public class CalculatorTest {
 		calc1.divide(2);
 		calc1.divide(2);
 		assertEquals(2, calc1.getTotal());
-		assertEquals("", calc1.getHistory());
+		assertEquals("0 + 10 / 2 / 2", calc1.getHistory());
 	}
 }
